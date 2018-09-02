@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "filerotate"
   spec.description   = "file rotate ribrary"
-  spec.homepage      = "https://github.com/Gen-Arch/log_rotation.git"
+  spec.homepage      = "https://github.com/Gen-Arch/filerotate.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
