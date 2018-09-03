@@ -7,4 +7,4 @@
 # 例: - /home/tos/log/oplog/**/*.log
 
 dir:
-  - /home/tos/scripts/ruby/test/script/**/*.log
+  - 
