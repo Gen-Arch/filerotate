@@ -22,7 +22,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require "filerotate"
+
+#config file change
+FileRotate::Configure::set("#{Dir::pwd}/conf/config.yml")
+
+#Please specify the date
+FileRotate::start(6)
+```
 
 ## Development
 

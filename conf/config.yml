@@ -4,7 +4,15 @@
 # { } : コンマで区切られた文字列の組合せに展開します。例えば、 foo{a,b,c} は fooa, foob, fooc に展開されそれぞれに対してマッチ判定を行います。括弧は入れ子にすることができます。例えば、 {foo,bar{foo,bar}} は foo, barfoo, barbar のそれぞれにマッチします。
 # **/ : ワイルドカード */ の0回以上の繰り返しを意味し、 ディレクトリを再帰的にたどってマッチを行います。 例えば, foo/**/bar は foo/bar, foo/*/bar, foo/*/*/bar ... (以下無限に続く)に対してそれぞれ マッチ判定を行います。
 
-# 例: - /home/tos/log/oplog/**/*.log
+# 例: - /home/user/log/**/*.log
 
 dir:
   - 
+
+# compression option
+# true or false
+compression : true
+
+# output logfie option
+# STDOUT(default) | /path/to/directry/hoge.log
+logfile : STDOUT
