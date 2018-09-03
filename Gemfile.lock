@@ -1,25 +1,38 @@
 PATH
   remote: .
   specs:
-    filerotate (0.1.1)
+    filerotate (0.1.13)
       activesupport (~> 5.0)
+      archive-tar-minitar
+      zlib
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    archive-tar-minitar (0.6.1)
+      minitar (~> 0.6)
+      minitar-cli (~> 0.6)
     concurrent-ruby (1.0.5)
+    hashie (3.6.0)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
+    minitar (0.6.1)
+    minitar-cli (0.6.1)
+      minitar (~> 0.6.0)
+      powerbar (~> 1.0)
     minitest (5.11.3)
+    powerbar (1.0.18)
+      hashie (>= 1.1.0)
     rake (10.5.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    zlib (1.0.0)
 
 PLATFORMS
   ruby
@@ -30,4 +43,4 @@ DEPENDENCIES
   rake (~> 10.0)
 
 BUNDLED WITH
-   1.16.2
+   1.16.3
