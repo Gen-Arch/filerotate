@@ -8,13 +8,18 @@ module FileRotate
         config = FileRotate::Configure::get
         
         config["logfile"] = STDOUT if config["logfile"].nil?
-        logger = Logger.new(config["logfile"])
+        logger = Logger.new(File::expand_path(config["logfile"]))
 
         config["dir"].each do |d|
             dir = FileRotate::Checker::update(d,days)
             dir.each do |f|
                 logger.info("Compression -> #{f}")
-                FileRotate::Compression::run(f,config["compression"])
+                begin
+                    FileRotate::Compression::run(f,config["compression"])
+                rescue => e
+                    logger.warn(e)
+                    next
+                end
             end
         end
     end
