@@ -6,8 +6,9 @@ require "filerotate/compression"
 module FileRotate
     def start(days)
         config = FileRotate::Configure::get
-        log = STDOUT if config["logfile"].nil?
-        logger = Logger.new(log)
+        
+        config["logfile"] = STDOUT if config["logfile"].nil?
+        logger = Logger.new(config["logfile"])
 
         config["dir"].each do |d|
             dir = FileRotate::Checker::update(d,days)

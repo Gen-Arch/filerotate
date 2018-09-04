@@ -1,18 +1,19 @@
-# * :空文字列を含む任意の文字列と一致します。
-# ? :任意の一文字と一致します。
-# [ ] : 鈎括弧内のいずれかの文字と一致します。- でつな がれた文字は範囲を表します。鈎括弧の中の最初の文字が ^ である時には含まれない文字と一致します。 ^ の代わりに ksh や POSIX shell のように ! も同じ意 味で使えます。
-# { } : コンマで区切られた文字列の組合せに展開します。例えば、 foo{a,b,c} は fooa, foob, fooc に展開されそれぞれに対してマッチ判定を行います。括弧は入れ子にすることができます。例えば、 {foo,bar{foo,bar}} は foo, barfoo, barbar のそれぞれにマッチします。
-# **/ : ワイルドカード */ の0回以上の繰り返しを意味し、 ディレクトリを再帰的にたどってマッチを行います。 例えば, foo/**/bar は foo/bar, foo/*/bar, foo/*/*/bar ... (以下無限に続く)に対してそれぞれ マッチ判定を行います。
+## * :空文字列を含む任意の文字列と一致します。
+## ? :任意の一文字と一致します。
+## [ ] : 鈎括弧内のいずれかの文字と一致します。- でつな がれた文字は範囲を表します。鈎括弧の中の最初の文字が ^ である時には含まれない文字と一致します。 ^ の代わりに ksh や POSIX shell のように ! も同じ意 味で使えます。
+## { } : コンマで区切られた文字列の組合せに展開します。例えば、 foo{a,b,c} は fooa, foob, fooc に展開されそれぞれに対してマッチ判定を行います。括弧は入れ子にすることができます。例えば、 {foo,bar{foo,bar}} は foo, barfoo, barbar のそれぞれにマッチします。
+## **/ : ワイルドカード */ の0回以上の繰り返しを意味し、 ディレクトリを再帰的にたどってマッチを行います。 例えば, foo/**/bar は foo/bar, foo/*/bar, foo/*/*/bar ... (以下無限に続く)に対してそれぞれ マッチ判定を行います。
 
-# 例: - /home/user/log/**/*.log
+## 例: - /home/user/log/**/*.log
 
 dir:
   - 
 
-# compression option
-# true or false
+## compression option
+## true -> file compression gzip
+## false -> file delete
 compression : true
 
-# output logfie option
-# STDOUT(default) | /path/to/directry/hoge.log
-logfile : STDOUT
+## output logfie option
+## /path/to/directry/hoge.log
+logfile : 
