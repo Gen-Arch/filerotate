@@ -7,7 +7,7 @@ module FileRotate
     def start(days)
         config = FileRotate::Configure::get
         
-        config["logfile"] = STDOUT if config["logfile"].nil?
+        config["logfile"] = "#{Dir::pwd}/filerotate.log" if config["logfile"].nil?
         logger = Logger.new(File::expand_path(config["logfile"]))
 
         config["dir"].each do |d|
